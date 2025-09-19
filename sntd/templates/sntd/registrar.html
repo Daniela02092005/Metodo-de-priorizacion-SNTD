@@ -1,0 +1,49 @@
+{% extends "sntd/base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>Registrar Requerimiento Funcional</h2>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="id_rf">ID Requerimiento</label>
+        <input type="text" name="id_rf" id="id_rf" required>
+
+        <label for="satisfaccion">Satisfacción del Cliente</label>
+        <select name="satisfaccion" id="satisfaccion" required>
+            <option value="1">1 - No aporta nada</option>
+            <option value="2">2 - Aporta poco</option>
+            <option value="3">3 - Aporta significativamente</option>
+        </select>
+
+        <label for="necesidad">Necesidad del Usuario</label>
+        <select name="necesidad" id="necesidad" required>
+            <option value="1">1 - No es necesario prontamente</option>
+            <option value="2">2 - Medianamente necesario</option>
+            <option value="3">3 - Urgente</option>
+        </select>
+
+        <label for="tecnica">Complejidad Técnica</label>
+        <select name="tecnica" id="tecnica" required>
+            <option value="1">1 - Muy sencillo</option>
+            <option value="2">2 - Medianamente sencillo</option>
+            <option value="3">3 - Complejo</option>
+        </select>
+
+        <label for="dependencia">Dependencia</label>
+        <select name="dependencia" id="dependencia" required>
+            <option value="1">1 - Ninguno depende</option>
+            <option value="2">2 - Algunos dependen</option>
+            <option value="3">3 - Urgentes dependen</option>
+        </select>
+
+        <label for="opcion">Fórmula de Priorización</label>
+        <select name="opcion" id="opcion" required>
+            <option value="1">Multiplicación (valiosos y complejos)</option>
+            <option value="2">División (valiosos y fáciles)</option>
+        </select>
+
+        <button type="submit" class="btn">Registrar</button>
+    </form>
+</div>
+{% endblock %}

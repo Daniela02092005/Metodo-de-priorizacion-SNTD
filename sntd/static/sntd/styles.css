@@ -1,0 +1,145 @@
+/* === Reset básico === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #1a1a1d;
+    color: #f8f8f2;
+    line-height: 1.6;
+}
+
+/* === Header === */
+.header {
+    background: linear-gradient(90deg, #3d0c51, #6a0572);
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+.header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.menu {
+    margin-top: 0.5rem;
+}
+
+.menu a {
+    color: #f8f8f2;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ffb347; /* dorado */
+}
+
+/* === Contenedor === */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/* === Card === */
+.card {
+    background: #2a2a2d;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+}
+
+.card h2 {
+    color: #ffb347;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* === Formularios === */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: bold;
+    color: #d1c4e9;
+}
+
+input, select {
+    padding: 0.6rem;
+    border: none;
+    border-radius: 6px;
+    background: #fff;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* === Botones === */
+.btn {
+    background: #6a0572;
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #9c27b0;
+}
+
+.btn.small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.btn.danger {
+    background: #b00020;
+}
+
+.btn.danger:hover {
+    background: #e53935;
+}
+
+/* === Tabla === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th, table td {
+    padding: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+table th {
+    background: #3d0c51;
+    color: #fff;
+}
+
+table tr:hover {
+    background: #383838;
+}
+
+/* === Mensaje vacío === */
+.empty {
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+    color: #aaa;
+}

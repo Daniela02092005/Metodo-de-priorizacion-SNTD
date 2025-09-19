@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Método de Priorización SNTD</title>
+    <link rel="stylesheet" href="{% static 'sntd/styles.css' %}">
+</head>
+<body>
+    <header class="header">
+        <h1>Método de Priorización SNTD</h1>
+        <nav class="menu">
+            <a href="{% url 'registrar' %}">Registrar Requerimiento</a>
+            <a href="{% url 'listar' %}">Listar Requerimientos</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

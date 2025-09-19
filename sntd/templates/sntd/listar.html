@@ -1,0 +1,41 @@
+{% extends "sntd/base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>Lista de Requerimientos</h2>
+
+    {% if requerimientos %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>S</th>
+                <th>N</th>
+                <th>T</th>
+                <th>D</th>
+                <th>Resultado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for req in requerimientos %}
+            <tr>
+                <td>{{ req.id_rf }}</td>
+                <td>{{ req.satisfaccion }}</td>
+                <td>{{ req.necesidad }}</td>
+                <td>{{ req.tecnica }}</td>
+                <td>{{ req.dependencia }}</td>
+                <td>{{ req.resultado }}</td>
+                <td>
+                    <a href="{% url 'completar' req.id %}" class="btn small">✅ Completar</a>
+                    <a href="{% url 'eliminar' req.id %}" class="btn small danger">❌ Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="empty">No hay requerimientos registrados.</p>
+    {% endif %}
+</div>
+{% endblock %}
