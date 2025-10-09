@@ -1,0 +1,33 @@
+{% extends "sntd/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <h2>Tablero Kanban de Requerimientos</h2>
+
+        <div class="kanban">
+            {% for categoria in categorias %}
+            <div class="kanban-column">
+                <h3>{{ categoria.nombre }}</h3>
+                {% if categoria.requerimientos.all %}
+                    {% for req in categoria.requerimientos.all|dictsort:"prioridad" %}
+                    <div class="kanban-item">
+                        <p><strong>{{ req.id_rf }}</strong></p>
+                        <p>Prioridad: {{ req.prioridad }}</p>
+                        <p>Resultado: {{ req.resultado }}</p>
+                        <div class="kanban-actions">
+                            <a href="{% url 'completar' req.id %}" class="btn small">✅</a>
+                            <a href="{% url 'eliminar' req.id %}" class="btn small danger">❌</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="empty">Sin requerimientos</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

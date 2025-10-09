@@ -1,0 +1,30 @@
+{% extends "sntd/base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Crear Categorías</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required>
+        <label>Descripción:</label>
+        <input type="text" name="descripcion">
+        <button type="submit" class="btn">Guardar</button>
+    </form>
+
+    <h3>Categorías existentes</h3>
+    {% if partes %}
+    <table>
+        <tr><th>Nombre</th><th>Descripción</th><th>Acción</th></tr>
+        {% for p in partes %}
+        <tr>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.descripcion }}</td>
+            <td><a href="{% url 'eliminar_categoria' p.id %}" class="btn danger small">❌</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p class="empty">No hay categorías creadas.</p>
+    {% endif %}
+</div>
+{% endblock %}

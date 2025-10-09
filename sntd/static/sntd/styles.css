@@ -143,3 +143,44 @@ table tr:hover {
     font-style: italic;
     color: #aaa;
 }
+
+/* === Kanban Board === */
+.kanban {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-top: 1rem;
+}
+
+.kanban-column {
+    flex: 1;
+    min-width: 250px;
+    background: #2a2a2d;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.kanban-column h3 {
+    text-align: center;
+    color: #ffb347;
+    margin-bottom: 1rem;
+}
+
+.kanban-item {
+    background: #3a3a3d;
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+.kanban-item p {
+    margin: 0.2rem 0;
+}
+
+.kanban-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}

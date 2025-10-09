@@ -9,6 +9,17 @@
         <label for="id_rf">ID Requerimiento</label>
         <input type="text" name="id_rf" id="id_rf" required>
 
+        <label for="id_rf">Nombre Requerimiento</label>
+        <input type="text" name="name_rf" id="name_rf" required>
+
+        <label for="categoria">Categoría:</label>
+        <select name="categoria" class="form-control" required>
+            <option value="">Seleccione una categoría</option>
+            {% for cat in categorias %}
+                <option value="{{ cat.id }}">{{ cat.nombre }}</option>
+            {% endfor %}
+        </select>
+
         <label for="satisfaccion">Satisfacción del Cliente</label>
         <select name="satisfaccion" id="satisfaccion" required>
             <option value="1">1 - No aporta nada</option>
