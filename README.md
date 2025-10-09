@@ -17,8 +17,10 @@ También tomo en cuenta que cada equipo puede tener diferentes enfoques, por lo 
 ---
 
 Con esta app se puede:  
-- Registrar requerimientos funcionales.  
-- Listarlos en orden de importancia.  
+- Registrar secciones del proyecto.
+- Registrar requerimientos funcionales en las secciones.  
+- Ver los requerimientos listados en orden de importancia en cada sección.
+- Ver listado general detallado.  
 - Marcar como completados o eliminarlos.  
 
 ---
